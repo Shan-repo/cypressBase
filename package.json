@@ -1,0 +1,46 @@
+{
+  "name": "base",
+  "version": "1.0.0",
+  "description": "Cypress_Base_Framework",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:clean": "[ -d \"mochawesome-report\" ] && rm -rf mochawesome-report mochawesome.json || mkdir mochawesome-report",
+    "cy:run": "cypress run",
+    "cy:merge-reports": "mochawesome-merge --reportDir mochawesome-report > mochawesome.json",
+    "cy:generate-report": "marge mochawesome.json",
+    "cy:run-with-report": "npm run cy:clean; npm run cy:run; npm run cy:merge-reports; npm run cy:generate-report"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress-file-upload": "^3.3.3",
+    "cypress-multi-reporters": "^1.2.1",
+    "eslint": "^6.4.0",
+    "mocha": "^5.2.0",
+    "mocha-junit-reporters": "^1.23.6"
+  },
+  "devDependencies": {
+    "cypress": "^3.8.0",
+    "cypress-axe": "^0.5.1",
+    "cypress-xpath": "^1.4.0",
+    "elucidate": "0.0.1",
+    "eslint-config-eloquence": "^12.3.0",
+    "eslint-plugin-cypress": "^2.6.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "ghooks": "^2.0.4",
+    "lint": "^0.7.0",
+    "ls": "^0.2.1",
+    "mocha-multi-reporters": "^1.1.7",
+    "mochawesome": "^4.0.1",
+    "mochawesome-merge": "^2.0.1",
+    "mochawesome-report-generator": "^4.0.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "rimraf": "^3.0.0",
+    "yargs": "^14.2.0"
+  }
+}

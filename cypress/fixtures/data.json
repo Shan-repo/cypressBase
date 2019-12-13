@@ -1,0 +1,22 @@
+[
+  {
+  "name":"functional",
+  "role":"test",
+  "salary":"75000",
+  "isOffshore":true,
+  "areas":"QualityEngineering",
+  "travelCost":10,
+  "rate":800,
+  "platform":"innovation"
+  },
+  {
+    "name":"automation",
+    "role":"test",
+    "salary":"85000",
+    "isOffshore":true,
+    "areas":"Automation",
+    "travelCost":20,
+    "rate":800,
+    "platform":"innovation"
+  }
+]

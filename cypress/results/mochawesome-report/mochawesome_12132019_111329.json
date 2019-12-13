@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-12-13T00:13:25.288Z",
+    "end": "2019-12-13T00:13:29.936Z",
+    "duration": 4648,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "deefc1e2-f03f-425d-8672-b5d9dc87d843",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "36b1df0c-969b-49ec-b312-3dbbc01ec95a",
+          "title": "Mandatory Fields Validation Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verify validation messages for mandatory fields",
+              "fullTitle": "Mandatory Fields Validation Test verify validation messages for mandatory fields",
+              "timedOut": null,
+              "duration": 4583,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "landingPage.resourceName.type('randomestring');\nlandingPage.resourceName.clear();\nlandingPage.validationMessage('Resource name is required.');\nlandingPage.addResourceButton.should('not.be.visible');\nlandingPage.role.type('randomestring');\nlandingPage.role.clear();\nlandingPage.validationMessage('Role is required.');\nlandingPage.addResourceButton.should('not.be.visible');\nlandingPage.platform.type('randomestring');\nlandingPage.platform.clear();\nlandingPage.validationMessage('Platform is required.');\nlandingPage.addResourceButton.should('not.be.visible');\nlandingPage.salary.clear();\nlandingPage.validationMessage('Salary is required.');\nlandingPage.addResourceButton.should('not.be.visible');\nlandingPage.rate.clear();\nlandingPage.validationMessage('Rate is required.');\nlandingPage.addResourceButton.should('not.be.visible');\nlandingPage.travelCost.clear();\nlandingPage.validationMessage('Travel cost per day is required.');\nlandingPage.addResourceButton.should('not.be.visible');",
+              "err": {},
+              "uuid": "96de53f5-a665-4386-8af9-5bab1939e827",
+              "parentUUID": "36b1df0c-969b-49ec-b312-3dbbc01ec95a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "96de53f5-a665-4386-8af9-5bab1939e827"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4583,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "5.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "4.0.1"
+    }
+  }
+}

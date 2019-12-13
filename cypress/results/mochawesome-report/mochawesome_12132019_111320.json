@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2019-12-13T00:13:13.216Z",
+    "end": "2019-12-13T00:13:20.954Z",
+    "duration": 7738,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6d5fd40d-37c4-4ed1-af27-c3bc37c98be5",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "642f4913-24f9-422a-8c2c-a6c60e0d3c18",
+          "title": "Add Resources Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add resources",
+              "fullTitle": "Add Resources Test Add resources",
+              "timedOut": null,
+              "duration": 7666,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "for (var json = 0; json < this.data.length; json++) {\n  landingPage.resourceName.type(this.data[json].name);\n  landingPage.role.type(this.data[json].role);\n  landingPage.platform.type(this.data[json].platform);\n  landingPage.salary.clear().type(this.data[json].salary);\n  landingPage.rate.clear().type(this.data[json].rate);\n  landingPage.travelCost.clear().type(this.data[json].travelCost);\n  landingPage.offshore.click();\n  landingPage.areasDropdown.click();\n  landingPage.areas(this.data[json].areas);\n  landingPage.rate.click();\n  landingPage.addResourceButton.click();\n  cy.get('div[id=\"rsc-' + json + '\"] a[class=\"util-text-capitalize action\"]').should('contain', this.data[json].name);\n  cy.get('div[id=\"rsc-' + json + '\"] div[class=\"col m2 s12\"]').first().should('contain', landingPage.formatMoney(this.data[json].salary));\n  cy.get('div[id=\"rsc-' + json + '\"] div[class=\"col m1 s12\"]').should('contain', landingPage.formatMoney(this.data[json].rate));\n  cy.get('div[id=\"rsc-' + json + '\"] div[class=\"col m2 s12 center-align\"]').should('contain', landingPage.formatMoney(Math.round(this.data[json].salary * 1.058 / 260)));\n  var Cost = Math.round(this.data[json].salary * 1.058 / 260) + this.data[json].travelCost;\n  cy.log(Cost);\n  cy.get('div[id=\"rsc-' + json + '\"] div[class=\"col m1 s12 currency-value gain\"]').should('contain', landingPage.formatMoney(Math.round(this.data[json].rate - Cost)));\n}",
+              "err": {},
+              "uuid": "33140c27-70b4-4276-8ca3-d0501015c0e1",
+              "parentUUID": "642f4913-24f9-422a-8c2c-a6c60e0d3c18",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "33140c27-70b4-4276-8ca3-d0501015c0e1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7666,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "5.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "timestamp": "mmddyyyy_HHMMss"
+      },
+      "version": "4.0.1"
+    }
+  }
+}
